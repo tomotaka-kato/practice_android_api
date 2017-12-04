@@ -2,7 +2,23 @@
     <string name="app_name">PracticeAndroidApi</string>
     <string name="welcome_message">ようこそ！</string>
     <string name="welcome_page_title">Welcome Page</string>
-    <string name="timer_page_title">Timer</string>
+
     <string name="go_to_timer">タイマー</string>
     <string name="go_to_other">その他</string>
+
+    <string name="timer_page_title">Timer</string>
+    <string name="timer_start_button">Start</string>
+
+    <string-array name="time_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
 </resources>
