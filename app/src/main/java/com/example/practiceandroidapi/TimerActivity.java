@@ -60,7 +60,7 @@ public class TimerActivity extends AppCompatActivity implements TextToSpeech.OnI
 
         while (second > 0) {
             try {
-                tts.speak(String.valueOf(second), TextToSpeech.QUEUE_FLUSH, null);
+                tts.speak(String.valueOf(second), TextToSpeech.QUEUE_FLUSH, null, "");
                 second--;
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
