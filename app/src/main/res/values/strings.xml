@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">PracticeAndroidApi</string>
     <string name="welcome_message">ようこそ！</string>
+    <string name="welcome_page_title">Welcome Page</string>
+    <string name="timer_page_title">Timer</string>
     <string name="go_to_timer">タイマー</string>
     <string name="go_to_other">その他</string>
 </resources>
