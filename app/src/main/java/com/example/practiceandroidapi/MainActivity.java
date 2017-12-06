@@ -22,4 +22,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Go to BLE page.
+     * Called when the user taps the Go To BLE Button.
+     */
+    public void goToBLE(View view) {
+        Intent intent = new Intent(this, BLEActivity.class);
+        startActivity(intent);
+    }
+
 }

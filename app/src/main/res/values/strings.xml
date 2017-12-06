@@ -4,7 +4,7 @@
     <string name="welcome_page_title">Welcome Page</string>
 
     <string name="go_to_timer">タイマー</string>
-    <string name="go_to_other">その他</string>
+    <string name="go_to_ble">BLE</string>
 
     <string name="timer_page_title">Timer</string>
     <string name="timer_start_button">Start</string>
@@ -21,4 +21,6 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+
+    <string name="ble_connect">接続</string>
 </resources>

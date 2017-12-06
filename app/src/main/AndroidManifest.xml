@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.practiceandroidapi">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- bluetooth（BLE）対応端末にのみインストール可能設定 -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:label="@string/welcome_page_title">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +29,12 @@
         </activity>
         <activity
             android:name=".TimerActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/timer_page_title" >
-        </activity>
+            android:label="@string/timer_page_title"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BLEActivity"
+            android:label="BLE"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
