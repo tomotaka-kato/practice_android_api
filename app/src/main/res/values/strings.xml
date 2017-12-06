@@ -5,6 +5,7 @@
 
     <string name="go_to_timer">タイマー</string>
     <string name="go_to_ble">BLE</string>
+    <string name="go_to_page_transition">ページ遷移</string>
 
     <string name="timer_page_title">Timer</string>
     <string name="timer_start_button">Start</string>
@@ -23,4 +24,10 @@
     </string-array>
 
     <string name="ble_connect">接続</string>
+
+    <string name="go_to_page_b">ページBへ</string>
+    <string name="go_to_page_c">ページCへ</string>
+    <string name="go_to_page_a_normal">ページAへ（通常）</string>
+    <string name="go_to_page_a_delete_stacks">ページAへ（スタック削除）</string>
+
 </resources>

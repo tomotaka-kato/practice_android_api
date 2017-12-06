@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- bluetooth（BLE）対応端末にのみインストール可能設定 -->
     <uses-feature
@@ -35,6 +35,18 @@
             android:name=".BLEActivity"
             android:label="BLE"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PageAActivity"
+            android:label="Page A"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PageBActivity"
+            android:label="Page B"
+            android:parentActivityName=".PageAActivity" />
+        <activity
+            android:name=".PageCActivity"
+            android:label="Page C"
+            android:parentActivityName=".PageBActivity" />
     </application>
 
 </manifest>

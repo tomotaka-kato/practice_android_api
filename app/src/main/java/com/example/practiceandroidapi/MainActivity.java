@@ -31,4 +31,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Go to Page A
+     * Called when the user taps the Go To Page Transition Button.
+     */
+    public void goPageTransition(View view) {
+        Intent intent = new Intent(this, PageAActivity.class);
+        startActivity(intent);
+    }
+
 }
