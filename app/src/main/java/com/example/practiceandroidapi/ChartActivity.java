@@ -1,8 +1,13 @@
 package com.example.practiceandroidapi;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
 
+import com.example.practiceandroidapi.services.SimpleFileWriter;
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
@@ -10,8 +15,12 @@ import com.github.mikephil.charting.data.RadarData;
 import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ChartActivity extends AppCompatActivity {
@@ -24,12 +33,21 @@ public class ChartActivity extends AppCompatActivity {
         renderChart();
     }
 
+    public void reRenderChart(View view) {
+        renderChart();
+    }
+
     private void renderChart() {
         RadarChart chart = findViewById(R.id.radarChart);
 
-        RadarData radarData = createRadarData();
+        // データファイルへのパス
+        String path = createDemoData();
 
-        chart.setData(radarData);
+        List<IRadarDataSet> radarData = createRadarData(path);
+
+        RadarData data = new RadarData(radarData);
+        chart.setData(data);
+
         chart.animateXY(1000, 1000);
 
         // ラベルの表示
@@ -50,19 +68,49 @@ public class ChartActivity extends AppCompatActivity {
     }
 
     /** レーダーチャートのデータを作成し、返却する */
-    private RadarData createRadarData() {
-        ArrayList<RadarEntry> entry = new ArrayList<>();
+    private List<IRadarDataSet> createRadarData(String path) {
+        List<IRadarDataSet> list = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(path));
 
-        entry.add(new RadarEntry(10.125f, 0));
-        entry.add(new RadarEntry( 20.5f, 2));
-        entry.add(new RadarEntry(32.32f, 1));
-        entry.add(new RadarEntry(16.0f, 3));
-        entry.add(new RadarEntry(28.893f, 4));
+            String str;
+            int i = 0;
+            String[] chartLabels = {"チャートA", "チャートB", "チャートC"};
+            int[] colors = {Color.BLUE, Color.RED, Color.YELLOW};
+            while((str = br.readLine()) != null){
 
-        RadarDataSet chartSet = new RadarDataSet(entry, "脳波測定結果");
-        // 塗りつぶし
-        chartSet.setDrawFilled(true);
+                ArrayList<RadarEntry> entry = new ArrayList<>();
+                String[] strings = str.split(",");
+                for (String s : strings) {
+                    entry.add(new RadarEntry(Byte.valueOf(s)));
+                }
+                entry.add(new RadarEntry(10.125f));
 
-        return new RadarData(chartSet);
+                RadarDataSet chartSet = new RadarDataSet(entry, chartLabels[ i ]);
+                // 色
+                chartSet.setColor(colors[i]);
+                // 塗りつぶし
+                chartSet.setDrawFilled(true);
+
+                // list.add(new RadarData(chartSet));
+                list.add(chartSet);
+                i++;
+            }
+            br.close();
+
+            // return new RadarData(chartSet);
+        } catch (Exception e) {
+            Log.d("RadarChart", "読み込みエラー");
+        }
+        return list;
+    }
+
+    private String createDemoData() {
+        SimpleFileWriter writer = new SimpleFileWriter();
+        String path = writer.getPath(this.getFilesDir().getPath());
+        writer.createDirectory(path);
+        String filePath = path + "/close.txt";
+        writer.write(filePath);
+        return filePath;
     }
 }

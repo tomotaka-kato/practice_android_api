@@ -33,6 +33,7 @@
     <string name="go_to_page_a_delete_stacks">ページAへ（スタック削除）</string>
     <string name="go_to_writer">ファイル書き出し</string>
     <string name="write_file">書き出し</string>
+    <string name="rerender_button">再描画</string>
 
 
 </resources>
