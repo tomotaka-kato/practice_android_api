@@ -40,4 +40,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * チャート画面への遷移
+     * @param view
+     */
+    public void goChart(View view) {
+        Intent intent = new Intent(this, ChartActivity.class);
+        startActivity(intent);
+    }
+
 }

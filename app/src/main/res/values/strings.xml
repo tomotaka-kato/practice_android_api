@@ -6,6 +6,8 @@
     <string name="go_to_timer">タイマー</string>
     <string name="go_to_ble">BLE</string>
     <string name="go_to_page_transition">ページ遷移</string>
+    <string name="go_to_chart">チャート</string>
+    <string name="text_radar_chart_title">タイトル</string>
 
     <string name="timer_page_title">Timer</string>
     <string name="timer_start_button">Start</string>
@@ -29,5 +31,6 @@
     <string name="go_to_page_c">ページCへ</string>
     <string name="go_to_page_a_normal">ページAへ（通常）</string>
     <string name="go_to_page_a_delete_stacks">ページAへ（スタック削除）</string>
+
 
 </resources>

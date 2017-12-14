@@ -62,7 +62,7 @@ public class BLEActivity extends AppCompatActivity {
         // ペアリング済みのデバイスがなければ処理終了
         if(this.device == null) { Log.d("BLE_TEST", "no device"); return; }
 
-        device.connectGatt(this, false, mGattCallback);
+        device.connectGatt(this, false, mGattCallback, BluetoothDevice.TRANSPORT_LE);
 
     }
 

@@ -47,6 +47,12 @@
             android:name=".PageCActivity"
             android:label="Page C"
             android:parentActivityName=".PageBActivity" />
+        <activity
+            android:name=".ChartActivity"
+            android:label="Chart"
+            android:parentActivityName=".MainActivity"
+            >
+        </activity>
     </application>
 
 </manifest>
