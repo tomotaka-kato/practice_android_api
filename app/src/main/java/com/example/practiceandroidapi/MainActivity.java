@@ -49,4 +49,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goWriter(View view) {
+        Intent intent = new Intent(this, WriteFileActivity.class);
+        startActivity(intent);
+    }
+
 }

@@ -50,9 +50,8 @@
         <activity
             android:name=".ChartActivity"
             android:label="Chart"
-            android:parentActivityName=".MainActivity"
-            >
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".WriteFileActivity"></activity>
     </application>
 
 </manifest>

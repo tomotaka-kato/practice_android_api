@@ -63,8 +63,20 @@
         android:layout_height="wrap_content"
         android:onClick="goChart"
         android:text="@string/go_to_chart"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        tools:layout_editor_absoluteY="340dp" />
+        app:layout_constraintStart_toEndOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="goWriter"
+        android:text="@string/go_to_writer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 </android.support.constraint.ConstraintLayout>
